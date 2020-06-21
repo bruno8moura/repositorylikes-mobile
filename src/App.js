@@ -63,13 +63,12 @@ export default function App() {
 
                   <View style={styles.techsContainer}>
                     {
-                      repo.techs.map(tech => (<Text style={styles.tech}>{tech}</Text>))
+                      repo.techs.map(tech => (<Text key={tech} style={styles.tech}>{tech}</Text>))
                     }
                   </View>
                   <View style={styles.likesContainer}>
                     <Text
                       style={styles.likeText}
-                      // Remember to replace "1" below with repository ID: {`repository-likes-${repository.id}`}
                       testID={`repository-likes-${repo.id}`}
                     >
                       {`${repo.likes} curtidas`}
@@ -78,7 +77,6 @@ export default function App() {
                   <TouchableOpacity
                     style={styles.button}
                     onPress={() => handleLikeRepository(repo.id)}
-                    // Remember to replace "1" below with repository ID: {`like-button-${repository.id}`}
                     testID={`like-button-${repo.id}`}
                   >
                     <Text style={styles.buttonText}>Curtir</Text>
